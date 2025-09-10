@@ -36,3 +36,39 @@ const teamMembers = [
     img: "img/female3.png"
   }
 ];
+
+// Dichiaro la constante del container per l'imput
+const row = document.querySelector(".rows");
+
+// Variabile per accumulo degli output
+let cards = "";
+
+// Cicliamo l'array degli oggetti
+for(let i = 0; i < teamMembers.length; i++){
+  const member = teamMembers[i];
+  // Aggiungo ogni card tramite la funzione
+  cards += createCard(member)
+  console.log(cards);
+}
+
+// Funzione per la creazione delle card
+function createCard(obj) {
+
+  const { name, role, email, img} = obj;
+
+  const card = `
+        <div class="card">
+            <img src="${img}" alt="${name}">
+            <div class="card-body">
+                <h5 class="card-title">${name}</h5>
+                <p class="card-text">${role}</p>
+                <a href="#" class="email">${email}</a>
+            </div>
+        </div>`;
+
+  return card
+}
+
+// Output delle cards nel container
+
+row.innerHTML = cards;
