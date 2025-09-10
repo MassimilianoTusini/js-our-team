@@ -39,6 +39,7 @@ const teamMembers = [
 
 // Dichiaro la constante del container per l'imput
 const row = document.querySelector(".rows");
+const header = document.querySelector("header")
 
 // Variabile per accumulo degli output
 let cards = "";
@@ -72,3 +73,7 @@ function createCard(obj) {
 // Output delle cards nel container
 
 row.innerHTML = cards;
+
+const title = document.createElement("h1");
+header.appendChild(title);
+title.innerText = "IL NOSTRO TEAM";
